@@ -1,0 +1,437 @@
+<!DOCTYPE HTML>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Tour — Rumah Adat Bugis (Bola Ugi)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+  <link rel="stylesheet" href="style/vtour.css">
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+</head>
+
+<body>
+  <div class="top-bar">
+    <a href="index.html" class="go-home">← Kembali ke Beranda</a>
+    <h3 class="page-title">Virtual Tour — Rumah Adat Bugis (Bola Ugi)</h3>
+    <div class="top-bar__actions">
+      <button class="minimap-btn" onclick="showMinimap()">Tampilkan Minimap</button>
+      <button id="toggleDragBtn" class="minimap-btn">Nonaktifkan Drag</button>
+    </div>
+  </div>
+
+  <!-- Modal Minimap -->
+  <div id="minimapModal" class="minimap-modal" onclick="hideMinimap()">
+    <img src="assets/images/minimap_img.png" alt="Minimap Virtual Tour" class="minimap-img">
+  </div>
+
+  <div id="panorama"></div>
+
+  <!-- Tombol Scene -->
+  <div class="scenes">
+    <button onclick="viewer.loadScene('s0')">1</button>
+    <button onclick="viewer.loadScene('s1')">2</button>
+    <button onclick="viewer.loadScene('s2')">3</button>
+    <button onclick="viewer.loadScene('s3')">4</button>
+    <button onclick="viewer.loadScene('s4')">5</button>
+    <button onclick="viewer.loadScene('s5')">6</button>
+    <button onclick="viewer.loadScene('s6')">7</button>
+    <button onclick="viewer.loadScene('s7')">8</button>
+    <button onclick="viewer.loadScene('s8')">9</button>
+    <button onclick="viewer.loadScene('s9')">10</button>
+    <button onclick="viewer.loadScene('s10')">11</button>
+  </div>
+
+  <script>
+    var viewer = pannellum.viewer('panorama', {
+      "default": {
+        "firstScene": "s0",
+        "autoLoad": true,
+        "showControls": true
+      },
+      "scenes": {
+        "s0": {
+          "title": "Scene 1 — Halaman Depan",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image0.jpg",
+          "hotSpots": [
+            { 
+              "pitch": 3, 
+              "yaw": 0, 
+              "type": 
+              "scene", 
+              "sceneId": "s1", 
+              "text": "Ke Tangga Depan" },
+            { 
+              "pitch": 4.19,
+              "yaw": 14.25,
+              "type": "info",
+              "text": "Lampu pada rumah adat Bugis berfungsi sebagai penerangan halaman dan area tangga pada malam hari. Selain memberi cahaya untuk keamanan dan aktivitas, lampu juga menjadi simbol penerang kehidupan dan keharmonisan keluarga, sejalan dengan nilai budaya Bugis yang menjunjung keteraturan dan keseimbangan."},
+            {
+              "pitch": 4.55,
+              "yaw": 21.44,
+              "type": "info",
+              "text": "Papan Informasi Rumah Adat Bugis — penanda lokasi di kawasan Benteng Somba Opu. Baca selengkapnya di: https://id.wikipedia.org/wiki/Benteng_Somba_Opu"}
+          ]
+        },
+        "s1": {
+          "title": "Scene 2 — Tangga Depan",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image1.jpg",
+          "hotSpots": [
+            { 
+              "pitch": -3, 
+              "yaw": 90, 
+              "type": "scene", 
+              "sceneId": "s0", 
+              "text": "Kembali ke Halaman Depan" },
+            { 
+              "pitch": 23, 
+              "yaw": 0, 
+              "type": "scene", 
+              "sceneId": "s10", 
+              "text": "Ke Pintu Depan" },
+            { 
+              "pitch": -5, 
+              "yaw": -90, 
+              "type": "scene", 
+              "sceneId": "s2", 
+              "text": "Ke Kolom Tengah" },
+            { 
+              "pitch": 0, 
+              "yaw": -80, 
+              "type": "scene", 
+              "sceneId": "s3", 
+              "text": "Ke Tangga Belakang" }
+          ]
+        },
+        "s2": {
+          "title": "Scene 3 — Kolom Tengah",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image2.jpg",
+          "hotSpots": [
+            { 
+              "pitch": -8, 
+              "yaw": -95, 
+              "type": "scene", 
+              "sceneId": "s1", 
+              "text": "Ke Tangga Depan" },
+            { 
+              "pitch": -2, 
+              "yaw": -90, 
+              "type": "scene", 
+              "sceneId": "s0", 
+              "text": "Ke Depan Rumah" },
+            { 
+              "pitch": 0, 
+              "yaw": 108, 
+              "type": "scene", 
+              "sceneId": "s3", 
+              "text": "Ke Tangga Belakang" }
+          ]
+        },
+        "s3": {
+          "title": "Scene 4 — Tangga Belakang",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image3.jpg",
+          "hotSpots": [
+            { 
+              "pitch": 0, 
+              "yaw": 90, 
+              "type": "scene", 
+              "sceneId": "s1", 
+              "text": "Ke Tangga Depan" },
+            { 
+              "pitch": -5, 
+              "yaw": 100, 
+              "type": "scene", 
+              "sceneId": "s2", 
+              "text": "Ke Kolom Tengah" },
+            { 
+              "pitch": 5, 
+              "yaw": 10, 
+              "type": "scene", 
+              "sceneId": "s4", 
+              "text": "Naik ke Pintu Belakang" }
+          ]
+        },
+        "s4": {
+          "title": "Scene 5 — Pintu Belakang",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image4.jpg",
+          "hotSpots": [
+            { 
+              "pitch": -50, 
+              "yaw": 5, 
+              "type": "scene", 
+              "sceneId": "s3", 
+              "text": "Ke Tangga Belakang" },
+            { 
+              "pitch": -20, 
+              "yaw": -90, 
+              "type": "scene", 
+              "sceneId": "s5", 
+              "text": "Ke Dapur" }
+          ]
+        },
+        "s5": {
+          "title": "Scene 6 — Dapur",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image5.jpg",
+          "hotSpots": [
+            { 
+              "pitch": -15.52, 
+              "yaw": 90.67, 
+              "type": "scene", 
+              "sceneId": "s4", 
+              "text": "Ke Pintu Belakang" },
+            { 
+              "pitch": -1.68, 
+              "yaw": -7.63, 
+              "type": "scene", 
+              "sceneId": "s6", 
+              "text": "Ke Gudang" },
+            { 
+              "pitch": -28.95, 
+              "yaw": -11.12, 
+              "type": "scene", 
+              "sceneId": "s7", 
+              "text": "Ke Pertigaan Tengah" }
+          ]
+        },
+        "s6": {
+          "title": "Scene 7 — Gudang",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image6.jpg",
+          "hotSpots": [
+            { 
+              "pitch": -5.35, 
+              "yaw": 5.48, 
+              "type": "scene", 
+              "sceneId": "s5", 
+              "text": "Kembali ke Pertigaan Tengah" }
+          ]
+        },
+        "s7": {
+          "title": "Scene 8 — Pertigaan Tengah",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image7.jpg",
+          "hotSpots": [
+            { 
+              "pitch": -18.75, 
+              "yaw": 93.83, 
+              "type": "scene", 
+              "sceneId": "s6", 
+              "text": "Ke Gudang" },
+            { 
+              "pitch": -10.36, 
+              "yaw": 21.32, 
+              "type": "scene", 
+              "sceneId": "s8", 
+              "text": "Ke Tengah Rumah" },
+            { 
+              "pitch": -3.98, 
+              "yaw": 1.18, 
+              "type": "scene", 
+              "sceneId": "s9", 
+              "text": "Ke Dekat Pintu Masuk" },
+            { 
+              "pitch": -1.93, 
+              "yaw": -0.34, 
+              "type": "scene", 
+              "sceneId": "s10", 
+              "text": "Ke Pintu Depan" },
+            { 
+              "pitch": -15.40, 
+              "yaw": -102.98, 
+              "type": "scene", 
+              "sceneId": "s5", 
+              "text": "Ke Dapur" }
+          ]
+        },
+        "s8": {
+          "title": "Scene 9 — Tengah Rumah",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image8.jpg",
+          "hotSpots": [
+            { 
+              "pitch": -2.18, 
+              "yaw": 39.62, 
+              "type": "scene", 
+              "sceneId": "s5", 
+              "text": "Ke Dapur" },
+            { 
+              "pitch": -10.52, 
+              "yaw": 34.84, 
+              "type": "scene", 
+              "sceneId": "s7", 
+              "text": "Ke Pertigaan Tengah" },
+            { 
+              "pitch": -11.14, 
+              "yaw": 142.80, 
+              "type": "scene", 
+              "sceneId": "s9", 
+              "text": "Ke Dekat Pintu Masuk" },
+            { 
+              "pitch": 0.09, 
+              "yaw": 149.70, 
+              "type": "scene", 
+              "sceneId": "s10", 
+              "text": "Ke Pintu Depan" }
+          ]
+        },
+        "s9": {
+          "title": "Scene 10 — Dekat Pintu Masuk",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image9.jpg",
+          "hotSpots": [
+            { 
+              "pitch": -17.69, 
+              "yaw": -55.71, 
+              "type": "scene", 
+              "sceneId": "s8", 
+              "text": "Ke Tengah Rumah" },
+            { 
+              "pitch": -6.80, 
+              "yaw": 0.05, 
+              "type": "scene", 
+              "sceneId": "s7", 
+              "text": "Ke Pertigaan Tengah" }
+          ]
+        },
+        "s10": {
+          "title": "Scene 11 — Pintu Depan",
+          "type": "equirectangular",
+          "panorama": "assets/360_images/image10.jpg",
+          "hotSpots": [
+            { 
+              "pitch": -21.19, 
+              "yaw": 1.73, 
+              "type": "scene", 
+              "sceneId": "s9", 
+              "text": "Ke Dekat Pintu Depan" },
+            { 
+              "pitch": -43.36, 
+              "yaw": -90.64, 
+              "type": "scene", 
+              "sceneId": "s2", 
+              "text": "Ke Tangga Depan" },
+            { 
+              "pitch": -18.31, 
+              "yaw": -170.92, 
+              "type": "scene", 
+              "sceneId": "s8", 
+              "text": "Ke Tengah Rumah" }
+          ]
+        }
+      }
+    });
+// Fungsi untuk menampilkan modal minimap
+  function showMinimap() {
+    document.getElementById('minimapModal').classList.add('active');
+  }
+  function hideMinimap() {
+    document.getElementById('minimapModal').classList.remove('active');
+  }
+
+  // === Menampilkan koordinat pitch dan yaw saat panorama di-klik ===
+  const panoramaEl = document.getElementById('panorama');
+  const coordDiv = document.createElement('div');
+  coordDiv.className = 'coord-hint';
+  coordDiv.textContent = 'Klik panorama untuk koordinat';
+  if (panoramaEl) {
+    panoramaEl.appendChild(coordDiv);
+  } else {
+    document.body.appendChild(coordDiv);
+  }
+  const toggleBtn = document.getElementById('toggleDragBtn');
+  const viewerContainer = typeof viewer.getContainer === 'function'
+    ? viewer.getContainer()
+    : panoramicFallback();
+
+  let dragEnabled = true;
+
+  function panoramicFallback() {
+    return panoramaEl.querySelector('.pnlm-container') || panoramaEl;
+  }
+
+  function setCoordHint(message) {
+    coordDiv.textContent = message;
+  }
+
+  function showCoords(event) {
+    const coords = viewer.mouseEventToCoords(event);
+    if (coords && Number.isFinite(coords.yaw) && Number.isFinite(coords.pitch)) {
+      coordDiv.textContent = `Yaw: ${coords.yaw.toFixed(2)}, Pitch: ${coords.pitch.toFixed(2)}`;
+    } else {
+      const fallbackYaw = typeof viewer.getYaw === 'function' ? viewer.getYaw() : NaN;
+      const fallbackPitch = typeof viewer.getPitch === 'function' ? viewer.getPitch() : NaN;
+      if (Number.isFinite(fallbackYaw) && Number.isFinite(fallbackPitch)) {
+        coordDiv.textContent = `Yaw: ${fallbackYaw.toFixed(2)}, Pitch: ${fallbackPitch.toFixed(2)}`;
+      } else {
+        setCoordHint('Tidak dapat membaca koordinat');
+      }
+    }
+  }
+
+  function handlePointer(event) {
+    if (!dragEnabled) {
+      showCoords(event);
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
+
+  function handleScroll(event) {
+    if (!dragEnabled) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+  }
+
+  const wheelListenerOptions = { capture: true, passive: false };
+
+  function disableDrag() {
+    dragEnabled = false;
+    panoramaEl.style.cursor = 'pointer';
+    viewerContainer.style.cursor = 'pointer';
+    viewerContainer.addEventListener('mousedown', handlePointer, true);
+    viewerContainer.addEventListener('touchstart', handlePointer, true);
+    viewerContainer.addEventListener('click', handlePointer, true);
+    viewerContainer.addEventListener('touchend', handlePointer, true);
+    viewerContainer.addEventListener('wheel', handleScroll, wheelListenerOptions);
+    toggleBtn.textContent = 'Aktifkan Drag';
+    setCoordHint('Mode koordinat aktif — klik panorama');
+  }
+
+  function enableDrag() {
+    dragEnabled = true;
+    panoramaEl.style.cursor = 'grab';
+    viewerContainer.style.cursor = 'grab';
+    viewerContainer.removeEventListener('mousedown', handlePointer, true);
+    viewerContainer.removeEventListener('touchstart', handlePointer, true);
+    viewerContainer.removeEventListener('click', handlePointer, true);
+    viewerContainer.removeEventListener('touchend', handlePointer, true);
+    viewerContainer.removeEventListener('wheel', handleScroll, wheelListenerOptions);
+    toggleBtn.textContent = 'Nonaktifkan Drag';
+    setCoordHint('Klik panorama untuk koordinat');
+  }
+
+  toggleBtn.onclick = function() {
+    if (dragEnabled) {
+      disableDrag();
+    } else {
+      enableDrag();
+    }
+  };
+
+  // Set cursor awal dan pesan bawaan
+  enableDrag();
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.hotspot-alert.is-open').forEach((node) => node.classList.remove('is-open'));
+  });
+
+  </script>
+
+  </body>
+</html>

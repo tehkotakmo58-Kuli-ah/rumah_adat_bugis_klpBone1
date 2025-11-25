@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone View – Rumah Adat Bugis</title>
+    <link rel="stylesheet" href="style/view-drone.css">
+</head>
+<body>
+
+<header>
+    <h1>Drone View – Rumah Adat Bugis (Bola Ugi)</h1>
+    <div class="muted">Putar dan amati rumah adat dari udara dengan perspektif 4K.</div>
+</header>
+
+<div class="shell">
+
+    <div class="page-actions">
+        <a class="back-home" href="index.html">← Kembali ke Beranda</a>
+    </div>
+
+    <div class="content">
+
+        <h2>Pratinjau Utama</h2>
+
+        <!-- VIDEO UTAMA Kualitas Sedang
+        <video id="mainVideo" class="video-main" controls>
+            <source src="https://github.com/riskan4/rumah_adat_bugis/releases/download/v1.0-video/drone_main.mp4" type="video/mp4">
+            Browser Anda tidak mendukung pemutar video.
+        </video> -->
+
+                <!-- VIDEO UTAMA Kualitas Rendah-->
+        <video id="mainVideo" class="video-main" controls>
+            <source src="https://github.com/riskan4/rumah_adat_bugis/releases/download/v1.0-video/drone_main_kualitas_rendah.mp4" type="video/mp4">
+            Browser Anda tidak mendukung pemutar video.
+        </video>
+
+        <h3>Video Lainnya</h3>
+
+        <!-- GRID VIDEO THUMBNAIL -->
+        <div class="video-grid">
+
+            <video class="thumb" onclick="switchVideo(this)" muted>
+                <source src="https://github.com/riskan4/rumah_adat_bugis/releases/download/v1.0-video/Drone2.mp4" type="video/mp4">
+            </video>
+
+            <video class="thumb" onclick="switchVideo(this)" muted>
+                <source src="https://github.com/riskan4/rumah_adat_bugis/releases/download/v1.0-video/drone3.mp4" type="video/mp4">
+            </video>
+
+            <video class="thumb" onclick="switchVideo(this)" muted>
+                <source src="https://github.com/riskan4/rumah_adat_bugis/releases/download/v1.0-video/drone4.mp4" type="video/mp4">
+            </video>
+
+            <video class="thumb" onclick="switchVideo(this)" muted>
+                <source src="https://github.com/riskan4/rumah_adat_bugis/releases/download/v1.0-video/drone5.mp4" type="video/mp4">
+            </video>
+
+            <video class="thumb" onclick="switchVideo(this)" muted>
+                <source src="https://github.com/riskan4/rumah_adat_bugis/releases/download/v1.0-video/drone6.mp4" type="video/mp4">
+            </video>
+
+        </div>
+
+        <h2>Keterangan</h2>
+        <p>
+            Video drone ini digunakan untuk mendukung pembelajaran etnomatematika:
+            mengamati proporsi, simetri, dan struktur geometri pada rumah adat Bugis.
+        </p>
+
+    </div>
+</div>
+
+<footer>
+    © 2025 · Video Drone Rumah Adat Bugis · Dibangun untuk pembelajaran etnomatematika · Tim Pengembang Rumah Adat Bugis
+</footer>
+
+<script>
+function switchVideo(el){
+    const main = document.getElementById("mainVideo");
+    main.src = el.querySelector("source").src;
+    main.play();
+}
+</script>
+
+</body>
+</html>
